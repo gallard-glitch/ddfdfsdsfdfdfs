@@ -1,0 +1,24 @@
+from XRPLib.defaults import *
+
+# available variables from defaults: left_motor, right_motor, drivetrain,
+#      imu, rangefinder, reflectance, servo_one, board, webserver
+# Write your code Here
+def drive_straight(drive_time: float = 1):
+    drivetrain.set_effort(0.8, 0.8)
+    time.sleep(drive_time)
+    drivetrain.stop()
+    
+def left_arc_turn(turn_time: float = 1):
+    drivetrain.set_effort(0.5, 1)
+    time.sleep(turn_time)
+    drivetrain.stop()
+    
+    left_arc_turn(1)
+    drive_straight(1)
+    left_arc_turn(1)
+    drive_straight(1)
+    left_arc_turn(1)
+    drive_straight(1)
+    left_arc_turn(1)
+    drive_straight(1)
+    
